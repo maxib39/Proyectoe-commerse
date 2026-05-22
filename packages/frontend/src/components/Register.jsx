@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { GoogleLogin } from '@react-oauth/google';
+import { useAuth } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
@@ -7,6 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
@@ -30,6 +33,27 @@ const Register = () => {
       }
     } catch (err) {
       setError("Error al conectar con el servidor.");
+    }
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    setError('');
+    try {
+      const response = await fetch('http://localhost:3002/api/auth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ credential: credentialResponse.credential })
+      });
+      const data = await response.json();
+
+      if (response.ok) {
+        login(data.user, data.token);
+        navigate('/');
+      } else {
+        setError(data.error);
+      }
+    } catch (err) {
+      setError("Error al conectar con el servidor para Google.");
     }
   };
 
@@ -66,6 +90,19 @@ const Register = () => {
         />
         <button type="submit" style={{ padding: '10px', backgroundColor: '#008CBA', color: 'white', border: 'none', cursor: 'pointer' }}>Registrarse</button>
       </form>
+
+      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <p>O regístrate con:</p>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={() => {
+              setError('El registro con Google falló');
+            }}
+            text="signup_with"
+          />
+        </div>
+      </div>
 
       <p style={{ textAlign: 'center' }}>
         ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>

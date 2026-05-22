@@ -8,16 +8,22 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev:frontend",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:catalogo\" \"npm run dev:auth\" \"npm run dev:venta\"",
     "dev:catalogo": "npm --workspace=catalogo run dev",
     "dev:frontend": "npm --workspace=frontend run dev",
     "dev:auth": "npm --workspace=auth run dev",
+    "dev:venta": "npm --workspace=venta run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["ecommerce", "modular", "javascript"],
+  "keywords": [
+    "ecommerce",
+    "modular",
+    "javascript"
+  ],
   "author": "Tu Nombre",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "nodemon": "^3.1.0"
   }
 }
