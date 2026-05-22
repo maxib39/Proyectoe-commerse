@@ -1,0 +1,23 @@
+{
+  "name": "proyectoe-commerce",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Proyecto e-commerce modular",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:frontend",
+    "dev:catalogo": "npm --workspace=catalogo run dev",
+    "dev:frontend": "npm --workspace=frontend run dev",
+    "dev:auth": "npm --workspace=auth run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["ecommerce", "modular", "javascript"],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

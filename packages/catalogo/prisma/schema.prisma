@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+// Esto va en packages/catalog/prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // O "postgresql" si decides cambiar en el futuro
+  url      = "file:../dev.db"
+}
+
+model Author {
+  id    Int      @id @default(autoincrement())
+  name  String
+  series Series[]
+}
+
+model Series {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  imageUrl    String   @default("https://via.placeholder.com/200x300?text=No+Image")
+  authorId    Int
+  author      Author   @relation(fields: [authorId], references: [id])
+  volumes     Volume[]
+  genreId     Int
+  genres      Genre    @relation(fields: [genreId], references: [id])
+}
+
+model Volume {
+  id          Int      @id @default(autoincrement())
+  volNumber   Int
+  price       Decimal
+  stock       Int      @default(0)
+  seriesId    Int
+  series      Series   @relation(fields: [seriesId], references: [id])
+
+  @@unique([seriesId, volNumber]) // Evita tener dos veces el "Volumen 1" en la misma serie
+}
+
+model Genre {
+  id          Int      @id @default(autoincrement())
+  name        String
+  series      Series[]
+}

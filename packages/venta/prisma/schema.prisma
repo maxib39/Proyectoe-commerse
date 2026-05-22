@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Venta{
+  nroVenta      Int         @id @default(autoincrement())
+  fecha         DateTime    @default(now())
+  clienteId     Int
+  cliente       Clente      @relation(fields: [clienteId], references: [id])
+  monto         Decimal
+  detalle       SaleDetail[]
+}
+
+model Clente{
+  id        Int     @id @default(autoincrement())
+  nombre    String
+  apellido  String
+  ventas    Venta[]
+}
+
+model SaleDetail {
+  id          Int    @id @default(autoincrement())
+  ventaId     Int
+  venta       Venta   @relation(fields: [ventaId], references: [nroVenta])
+  
+  // Referencia (solo para saber qué es)
+  mangaId     Int    
+  
+  // Snapshot (Esto es lo que garantiza la integridad histórica)
+  mangaTitle  String
+  volume      Int
+  priceAtSale Decimal // Guardas el precio de ESE momento
+  quantity    Int
+}
