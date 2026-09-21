@@ -1,29 +1,27 @@
 {
-  "name": "proyectoe-commerce",
-  "version": "1.0.0",
+  "name": "proyecto_e-commerce",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "description": "Proyecto e-commerce modular",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:catalogo\" \"npm run dev:auth\" \"npm run dev:venta\"",
-    "dev:catalogo": "npm --workspace=catalogo run dev",
-    "dev:frontend": "npm --workspace=frontend run dev",
-    "dev:auth": "npm --workspace=auth run dev",
-    "dev:venta": "npm --workspace=venta run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "keywords": [
-    "ecommerce",
-    "modular",
-    "javascript"
-  ],
-  "author": "Tu Nombre",
-  "license": "MIT",
+  "dependencies": {
+    "firebase": "^12.19.0",
+    "lucide-react": "^1.47.0",
+    "next": "16.3.5",
+    "nodemailer": "^10.0.10",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-hook-form": "^7.88.0",
+    "react-hot-toast": "^2.6.1"
+  },
   "devDependencies": {
-    "concurrently": "^9.2.1",
-    "nodemon": "^3.1.0"
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "tailwindcss": "^4"
   }
 }

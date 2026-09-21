@@ -1,0 +1,265 @@
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: #0f172a;
+}
+
+/* Encabezado del Manga */
+.mangaHeader {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .mangaHeader {
+        grid-template-columns: 1fr;
+    }
+}
+
+.coverWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.mangaDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.publisher {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.mangaDetails h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.author {
+    font-size: 1rem;
+    color: #475569;
+    margin: 0 0 1rem 0;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.genreBadge {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+}
+
+.synopsis {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+}
+
+.synopsis h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+}
+
+.synopsis p {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Sección de Volúmenes / Tomos */
+.volumesSection {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.volumesSection h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin: 0 0 0.25rem 0;
+}
+
+.volumesSub {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.noVolumes {
+    text-align: center;
+    padding: 2rem;
+    color: #94a3b8;
+}
+
+.volumeList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.volumeCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    transition: all 0.2s;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.volumeCard:hover {
+    border-color: #cbd5e1;
+    background-color: #ffffff;
+}
+
+.volumeInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.volumeNumber {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #0f172a;
+}
+
+.volumeTitle {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.stock {
+    font-size: 0.8rem;
+    background-color: #e2e8f0;
+    color: #475569;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.volumeAction {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantityInput {
+    width: 55px;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.addBtn {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.55rem 1.1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.addBtn:hover {
+    background-color: #1d4ed8;
+}
+
+.disabledBtn {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    padding: 0.55rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: not-allowed;
+}
+
+.loading,
+.notFound {
+    text-align: center;
+    padding: 5rem 1rem;
+    color: #64748b;
+    font-size: 1.1rem;
+}

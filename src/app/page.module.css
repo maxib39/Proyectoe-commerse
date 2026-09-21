@@ -1,0 +1,199 @@
+.main {
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: white;
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(67, 31, 226, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+}
+
+.heroSubtitle {
+    font-size: 1.15rem;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.heroActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.primaryBtn,
+.secondaryBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.primaryBtn {
+    background-color: #2563eb;
+    color: white;
+}
+
+.primaryBtn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondaryBtn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondaryBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Features */
+.featuresSection {
+    max-width: 1200px;
+    margin: -2.5rem auto 4rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.featureCard {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.featureIcon {
+    width: 50px;
+    height: 50px;
+    background-color: #eff6ff;
+    color: #2563eb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem auto;
+}
+
+.featureCard h3 {
+    font-size: 1.15rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Featured Mangas Section */
+.featuredSection {
+    max-width: 1200px;
+    margin: 0 auto 5rem auto;
+    padding: 0 1rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sectionHeader h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin: 0 0 0.25rem 0;
+}
+
+.sectionHeader p {
+    color: #6b7280;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.viewAllLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.viewAllLink:hover {
+    text-decoration: underline;
+}
+
+.mangaGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.loading,
+.empty {
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+
+.empty a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: #2563eb;
+    font-weight: 600;
+}

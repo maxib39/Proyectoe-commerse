@@ -1,0 +1,112 @@
+.container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background-color: #f9fafb;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+.icon {
+    color: #16a34a;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+}
+
+.card h1 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 1rem;
+    margin: 0 0 1.75rem 0;
+}
+
+.orderBox {
+    background-color: #f3f4f6;
+    border: 1px dashed #d1d5db;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    color: #374151;
+}
+
+.orderBox strong {
+    color: #111827;
+    font-family: monospace;
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+}
+
+.emailText {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+}
+
+.emailText strong {
+    color: #111827;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.catalogBtn,
+.ordersBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.catalogBtn {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.catalogBtn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.ordersBtn {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
+
+.ordersBtn:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}

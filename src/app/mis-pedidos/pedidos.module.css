@@ -1,0 +1,217 @@
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 4rem 0;
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.emptyState {
+    text-align: center;
+    background-color: white;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 4rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.emptyIcon {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+.emptyState h2 {
+    font-size: 1.3rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.catalogBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.ordersList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.orderCard {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cardHeader {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.headerMain {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.orderId {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #111827;
+}
+
+.orderDate {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.headerStatus {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.totalPrice {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badgeConfirmed {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badgeShipped {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badgeDelivered {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.expandBtn {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background-color: #fafafa;
+    border: none;
+    border-top: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: #4b5563;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.expandBtn:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.cardBody {
+    padding: 1.25rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.itemsTableWrapper {
+    overflow-x: auto;
+}
+
+.itemsTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.itemsTable th {
+    text-align: left;
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.itemsTable td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.shippingDetails {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+.shippingDetails h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.shippingDetails p {
+    margin: 0.25rem 0;
+}

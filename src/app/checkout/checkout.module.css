@@ -1,0 +1,147 @@
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.formSection,
+.summarySection {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.formSection h2,
+.summarySection h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 0.75rem;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.fieldGroup label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.fieldGroup input,
+.fieldGroup textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.fieldGroup input:focus,
+.fieldGroup textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #16a34a;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+    background-color: #15803d;
+}
+
+.submitBtn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.summaryList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summaryItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.summaryItem p {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.totalBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #e5e7eb;
+    padding-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 1.5rem;
+    background-color: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+.emptyContainer {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.backBtn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+}
