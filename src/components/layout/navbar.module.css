@@ -47,6 +47,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    z-index: 51;
+    /* Asegura prioridad de click en la barra de acciones */
 }
 
 .userMenu {
@@ -60,17 +62,32 @@
     color: #374151;
 }
 
+/* Unificamos estilos para todos los botones de acción */
 .logoutBtn,
-.cartBtn {
+.cartBtn,
+.userBtn {
     background: none;
     border: none;
     cursor: pointer;
+    /* <-- Soluciona el puntero del mouse */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem;
+    padding: 0.5rem;
+    /* Aumenta el área clickeable */
     border-radius: 6px;
     color: #374151;
+    position: relative;
+    transition: background-color 0.2s, color 0.2s;
+    pointer-events: auto;
+    /* Garantiza la captura de eventos */
+}
+
+.logoutBtn:hover,
+.cartBtn:hover,
+.userBtn:hover {
+    background-color: #f3f4f6;
+    color: #111827;
 }
 
 .loginBtn {
@@ -80,10 +97,13 @@
     text-decoration: none;
     color: #374151;
     font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
 }
 
-.cartBtn {
-    position: relative;
+.loginBtn:hover {
+    background-color: #f3f4f6;
 }
 
 .badge {
@@ -100,4 +120,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
+    /* Evita que el badge intercepte el click del botón */
 }

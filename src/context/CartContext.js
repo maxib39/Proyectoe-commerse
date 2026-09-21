@@ -9,7 +9,7 @@ export const useCart = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
     const [items, setItems] = useState([]);
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
     const [isHydrated, setIsHydrated] = useState(false);
 
     // 1. Cargar el carrito guardado en localStorage al iniciar
@@ -83,7 +83,7 @@ export function CartProvider({ children }) {
             }
         });
 
-        setIsDrawerOpen(true); // Abre el drawer lateral al agregar
+        setIsCartDrawerOpen(true); // Abre el drawer lateral al agregar
     };
 
     // Modificar cantidad (+1 o -1)
@@ -131,10 +131,10 @@ export function CartProvider({ children }) {
                 items,
                 totalItems,
                 totalPrice,
-                isDrawerOpen,
-                setIsDrawerOpen,
-                openDrawer: () => setIsDrawerOpen(true),
-                closeDrawer: () => setIsDrawerOpen(false),
+                isCartDrawerOpen,
+                setIsCartDrawerOpen,
+                openCartDrawer: () => setIsCartDrawerOpen(true),
+                closeCartDrawer: () => setIsCartDrawerOpen(false),
                 addToCart,
                 updateQuantity,
                 removeFromCart,

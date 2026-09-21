@@ -2,6 +2,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/layout/Navbar";
 import CartDrawer from "@/components/cart/CartDrawer";
+import UserDrawer from "@/components/user/userDrawer";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
             <Toaster position="top-right" />
             <Navbar />
             <CartDrawer />
+            <UserDrawer />
             {children}
           </CartProvider>
         </AuthProvider>

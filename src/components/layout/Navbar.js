@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
-import { ShoppingBag, User, LogOut } from "lucide-react";
+import { ShoppingBag, User } from "lucide-react";
 import styles from "./navbar.module.css";
 
 export default function Navbar() {
-    const { user, userData, logout } = useAuth();
-    const { totalItems, openDrawer } = useCart();
+    const { user, userData, openUserDrawer } = useAuth();
+    const { totalItems, openCartDrawer } = useCart();
+
 
     return (
         <header className={styles.navbar}>
@@ -18,29 +19,17 @@ export default function Navbar() {
                     📚 <span>MangaStore</span>
                 </Link>
 
-                {/* Links de Navegación */}
-                <nav className={styles.navLinks}>
-                    {userData?.role === "admin" && (
-                        <Link href="/admin" className={styles.adminLink}>
-                            Panel Admin
-                        </Link>
-                    )}
-                </nav>
-
                 {/* Acciones (Auth & Carrito) */}
                 <div className={styles.actions}>
                     {user ? (
-                        <div className={styles.userMenu}>
-                            <Link href="/mis-pedidos" className={styles.link}>
-                                Mis Pedidos
-                            </Link>
-                            <span className={styles.userName}>
-                                Hola, {userData?.displayName || user.email?.split("@")[0]}
-                            </span>
-                            <button onClick={logout} className={styles.logoutBtn} title="Cerrar sesión">
-                                <LogOut size={18} />
-                            </button>
-                        </div>
+                        <button
+                            onClick={openUserDrawer}
+                            className={styles.userBtn}
+                            aria-label="Abrir menú de usuario"
+                            type="button"
+                        >
+                            <User size={20} />
+                        </button>
                     ) : (
                         <Link href="/login" className={styles.loginBtn}>
                             <User size={18} />
@@ -50,7 +39,7 @@ export default function Navbar() {
 
 
                     {/* Botón Carrito con Badge */}
-                    <button onClick={openDrawer} className={styles.cartBtn} aria-label="Abrir carrito">
+                    <button onClick={openCartDrawer} className={styles.cartBtn} aria-label="Abrir carrito">
                         <ShoppingBag size={22} />
                         {totalItems > 0 && (
                             <span className={styles.badge}>{totalItems}</span>

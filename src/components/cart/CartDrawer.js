@@ -12,23 +12,23 @@ export default function CartDrawer() {
         items,
         totalPrice,
         totalItems,
-        isDrawerOpen,
-        closeDrawer,
+        isCartDrawerOpen,
+        closeCartDrawer,
         updateQuantity,
         removeFromCart,
         clearCart,
     } = useCart();
     const router = useRouter();
 
-    if (!isDrawerOpen) return null;
+    if (!isCartDrawerOpen) return null;
 
     const handleCheckout = () => {
-        closeDrawer();
+        closeCartDrawer();
         router.push("/checkout");
     };
 
     return (
-        <div className={styles.overlay} onClick={closeDrawer}>
+        <div className={styles.overlay} onClick={closeCartDrawer}>
             <div className={styles.drawer} onClick={(e) => e.stopPropagation()}>
                 {/* Encabezado del Carrito */}
                 <div className={styles.header}>
@@ -36,7 +36,7 @@ export default function CartDrawer() {
                         <ShoppingBag size={20} />
                         <h3>Tu Carrito ({totalItems})</h3>
                     </div>
-                    <button onClick={closeDrawer} className={styles.closeBtn}>
+                    <button onClick={closeCartDrawer} className={styles.closeBtn}>
                         <X size={20} />
                     </button>
                 </div>

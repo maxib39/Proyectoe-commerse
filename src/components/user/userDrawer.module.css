@@ -1,0 +1,144 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.drawer {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.header {
+    padding: 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #111827;
+    font-weight: 600;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn:hover {
+    color: #111827;
+    background-color: #f3f4f6;
+}
+
+.userMenu {
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.userName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.link,
+.adminLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.link {
+    color: #374151;
+    background-color: #f9fafb;
+}
+
+.link:hover {
+    background-color: #f3f4f6;
+}
+
+.adminLink {
+    color: #9333ea;
+    background-color: #f3e8ff;
+}
+
+.adminLink:hover {
+    background-color: #e9d5ff;
+}
+
+.logoutBtn {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #fee2e2;
+    border-radius: 6px;
+    background-color: #fef2f2;
+    color: #dc2626;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logoutBtn:hover {
+    background-color: #fecaca;
+}
