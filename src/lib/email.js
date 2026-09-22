@@ -3,19 +3,19 @@ import { formatPrice } from "./utils";
 
 // 1. Configurar el transporter de Nodemailer
 const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
 });
 
 // 2. Función para enviar el correo de confirmación
 export async function sendOrderConfirmationEmail({ orderId, customerName, customerEmail, items, total, shippingInfo }) {
-    // Generar las filas de la tabla de productos para el correo
-    const itemsRows = items
-        .map(
-            (item) => `
+  // Generar las filas de la tabla de productos para el correo
+  const itemsRows = items
+    .map(
+      (item) => `
       <tr style="border-bottom: 1px solid #e5e7eb;">
         <td style="padding: 10px 0;">
           <strong>${item.mangaTitle}</strong><br />
@@ -28,10 +28,10 @@ export async function sendOrderConfirmationEmail({ orderId, customerName, custom
         </td>
       </tr>
     `
-        )
-        .join("");
+    )
+    .join("");
 
-    const htmlContent = `
+  const htmlContent = `
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -49,7 +49,7 @@ export async function sendOrderConfirmationEmail({ orderId, customerName, custom
     <body>
       <div class="card">
         <div class="header">
-          <h1 style="margin:0; font-size: 24px;">📚 MangaStore</h1>
+          <h1 style="margin:0; font-size: 24px;"><img src="/logo.jpg" alt="Manga Store" width="50" height="50" />MangaStore</h1>
           <p style="margin: 6px 0 0 0; color: #9ca3af; font-size: 14px;">¡Gracias por tu compra, ${customerName}!</p>
         </div>
 
@@ -92,10 +92,10 @@ export async function sendOrderConfirmationEmail({ orderId, customerName, custom
     </html>
   `;
 
-    return transporter.sendMail({
-        from: `"MangaStore 📚" <${process.env.EMAIL_USER}>`,
-        to: customerEmail,
-        subject: `Confirmación de pedido #${orderId} — MangaStore`,
-        html: htmlContent,
-    });
+  return transporter.sendMail({
+    from: `"MangaStore 📚" <${process.env.EMAIL_USER}>`,
+    to: customerEmail,
+    subject: `Confirmación de pedido #${orderId} — MangaStore`,
+    html: htmlContent,
+  });
 }

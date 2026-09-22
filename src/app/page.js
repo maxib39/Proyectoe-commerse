@@ -36,10 +36,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <div className={styles.tag}>
-            <Sparkles size={16} />
-            <span>La tienda de mangas número 1 en Argentina</span>
-          </div>
+
 
           <h1 className={styles.heroTitle}>
             Completá tu colección con tus tomos favoritos
@@ -54,12 +51,6 @@ export default function HomePage() {
               <BookOpen size={20} />
               <span>Explorar Catálogo</span>
             </Link>
-            {!user && (
-              <Link href="/registro" className={styles.secondaryBtn}>
-                <span>Crear Cuenta</span>
-                <ArrowRight size={18} />
-              </Link>
-            )}
           </div>
         </div>
       </section>

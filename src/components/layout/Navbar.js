@@ -16,7 +16,7 @@ export default function Navbar() {
             <div className={styles.container}>
                 {/* Logo */}
                 <Link href="/" className={styles.logo}>
-                    📚 <span>MangaStore</span>
+                    <img src="/logo.jpg" alt="Manga Store" width={60} height={60} />
                 </Link>
 
                 {/* Acciones (Auth & Carrito) */}
