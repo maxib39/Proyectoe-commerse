@@ -5,6 +5,12 @@
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     padding: 0.75rem 1rem;
+
+    /* Propiedades para abarcar todo el ancho */
+    width: 100%;
+    left: 0;
+    margin: 0;
+    box-sizing: border-border-box;
 }
 
 .container {

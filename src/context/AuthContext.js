@@ -90,7 +90,7 @@ export function AuthProvider({ children }) {
 
     // Cerrar sesión limpiando el estado del drawer
     const logout = async () => {
-        setIsDrawerOpen(false);
+        setIsUserDrawerOpen(false);
         return signOut(auth);
     };
 
