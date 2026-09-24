@@ -79,6 +79,36 @@ export default function CheckoutPage() {
             setIsSubmitting(false);
         }
     };
+    if (!user) {
+        return (<div className={styles.formSection} style={{ textAlign: "center", padding: "2.5rem 1.5rem" }}>
+            <h2>Iniciar Sesión Requerido</h2>
+            <p style={{ color: "#6b7280", fontSize: "0.95rem", marginBottom: "1.5rem" }}>
+                Para poder confirmar tu pedido y enviarte el comprobante de compra por correo, necesitás tener una cuenta e iniciar sesión.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                <Link
+                    href="/login?redirect=/checkout"
+                    className={styles.submitBtn}
+                    style={{ textDecoration: "none", display: "block" }}
+                >
+                    Iniciar Sesión
+                </Link>
+
+                <Link
+                    href="/registro?redirect=/checkout"
+                    className={styles.backBtn}
+                    style={{ width: "100%", textDecoration: "none", display: "block" }}
+                >
+                    Crear Cuenta Nueva
+                </Link>
+            </div>
+
+            <div className={styles.disclaimer} style={{ marginTop: "1.5rem" }}>
+                💡 Guardaremos tus datos de envío e historial de tomos en tu perfil de usuario.
+            </div>
+        </div>)
+    }
 
     return (
         <main className={styles.container}>
