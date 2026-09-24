@@ -49,7 +49,7 @@ export async function sendOrderConfirmationEmail({ orderId, customerName, custom
     <body>
       <div class="card">
         <div class="header">
-          <h1 style="margin:0; font-size: 24px;"><img src="https://tu-proyecto.vercel.app/logo.jpg" alt="Manga Store" width="50" height="50" /></h1>
+          <h1 style="margin:0; font-size: 24px;"><img src="https://proyectoe-commerse.vercel.app/logo.jpg" alt="Manga Store" width="50" height="50" /></h1>
           <h1 style="margin:0; font-size: 24px;">MangaStore</h1>
           <p style="margin: 6px 0 0 0; color: #9ca3af; font-size: 14px;">¡Gracias por tu compra, ${customerName}!</p>
         </div>
