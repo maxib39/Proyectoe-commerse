@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { Plus, BookOpen, Layers } from "lucide-react";
 import styles from "../admin.module.css";
 
-const PREDEFINED_GENRES = ["Shonen", "Seinen", "Shojo", "Acción", "Aventura", "Romance", "Terror", "Comedia"];
+const PREDEFINED_GENRES = ["Shonen", "Seinen", "Shojo", "Acción", "Aventura", "Romance", "Terror", "Comedia", "Fantasia", "Misterio", "Drama", "Sobrenatural", "Historico", "Ciencia Ficcion", "Escolar", "Psicologico"];
 
 export default function AdminMangasPage() {
     const [mangas, setMangas] = useState([]);
@@ -22,14 +22,14 @@ export default function AdminMangasPage() {
         genres: [],
         synopsis: "",
         coverImage: "",
-        priceFrom: 1299900, // en centavos
+        priceFrom: 12999, // en centavos
     });
 
     // Formulario para Agregar Tomo a un manga existente
     const [selectedMangaId, setSelectedMangaId] = useState("");
     const [volumeForm, setVolumeForm] = useState({
         number: 1,
-        price: 1299900,
+        price: 12999,
         stock: 20,
     });
 
@@ -89,7 +89,7 @@ export default function AdminMangasPage() {
                 genres: [],
                 synopsis: "",
                 coverImage: "",
-                priceFrom: 1299900,
+                priceFrom: 12999,
             });
             fetchMangas();
         } catch (error) {
