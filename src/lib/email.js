@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
 import { formatPrice } from "./utils";
-import path from "path";
 
 // 1. Configurar el transporter de Nodemailer
 const transporter = nodemailer.createTransport({
@@ -50,7 +49,7 @@ export async function sendOrderConfirmationEmail({ orderId, customerName, custom
     <body>
       <div class="card">
         <div class="header">
-          <h1 style="margin:0; font-size: 24px;"><img src="cid:logoMangaStore" alt="Manga Store" width="50" height="50" /></h1>
+          <h1 style="margin:0; font-size: 24px;"><img src="https://tu-proyecto.vercel.app/logo.jpg" alt="Manga Store" width="50" height="50" /></h1>
           <h1 style="margin:0; font-size: 24px;">MangaStore</h1>
           <p style="margin: 6px 0 0 0; color: #9ca3af; font-size: 14px;">¡Gracias por tu compra, ${customerName}!</p>
         </div>
@@ -99,12 +98,5 @@ export async function sendOrderConfirmationEmail({ orderId, customerName, custom
     to: customerEmail,
     subject: `Confirmación de pedido #${orderId} — MangaStore`,
     html: htmlContent,
-    attachments: [
-      {
-        filename: "logo.jpg",
-        path: path.join(process.cwd(), "public", "logo.jpg"), // Apunta a public/logo.jpg
-        cid: "logoMangaStore", // Coincide con src="cid:logoMangaStore"
-      },
-    ]
   });
 }
