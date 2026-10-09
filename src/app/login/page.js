@@ -73,7 +73,7 @@ export default function LoginPage() {
                 <div className={styles.divider}>o</div>
 
                 <button onClick={handleGoogleLogin} className={styles.googleBtn}>
-                    <img src="google.svg" alt="google" />
+                    <img src="google.svg" alt="google" width={20} height={20} />
                     Continuar con Google
                 </button>
 
