@@ -106,15 +106,20 @@ export default function AdminPedidosPage() {
                                             <strong>{formatPrice(order.total)}</strong>
                                         </td>
                                         <td>
-                                            <select
-                                                value={order.status || "confirmado"}
-                                                onChange={(e) => handleStatusChange(order.id, e.target.value)}
-                                                className={styles.statusSelect}
-                                            >
-                                                <option value="confirmado">Confirmado</option>
-                                                <option value="enviado">Enviado</option>
-                                                <option value="entregado">Entregado</option>
-                                            </select>
+                                            {order.status === "cancelado" ? (
+                                                <span style={{ color: "#ef4444", fontWeight: "bold" }}>Cancelado</span>
+                                            ) : (
+                                                <select
+                                                    value={order.status || "confirmado"}
+                                                    onChange={(e) => handleStatusChange(order.id, e.target.value)}
+                                                    className={styles.statusSelect}
+                                                >
+                                                    <option value="confirmado">Confirmado</option>
+                                                    <option value="enviado">Enviado</option>
+                                                    <option value="entregado">Entregado</option>
+                                                    <option value="cancelado">Cancelado</option>
+                                                </select>
+                                            )}
                                         </td>
                                         <td>
                                             <button 

@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { collection, query, where, getDocs, orderBy } from "firebase/firestore";
+import { collection, query, where, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/context/AuthContext";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
-import { Package, ChevronDown, ChevronUp, Clock, CheckCircle2, Truck, ShoppingBag } from "lucide-react";
+import toast from "react-hot-toast";
+import { Package, ChevronDown, ChevronUp, Clock, CheckCircle2, Truck, ShoppingBag, Ban, XCircle } from "lucide-react";
 import styles from "./pedidos.module.css";
 
 function MisPedidosContent() {
@@ -58,6 +59,24 @@ function MisPedidosContent() {
         }));
     };
 
+    const handleCancelOrder = async (orderId) => {
+        if (!confirm("¿Estás seguro que querés cancelar este pedido?")) return;
+
+        try {
+            await updateDoc(doc(db, "orders", orderId), {
+                status: "cancelado"
+            });
+            toast.success("Pedido cancelado exitosamente.");
+            setOrders((prev) =>
+                prev.map((o) => (o.id === orderId ? { ...o, status: "cancelado" } : o))
+            );
+        } catch (error) {
+            console.error("Error al cancelar el pedido:", error);
+            toast.error("Ocurrió un error al intentar cancelar.");
+        }
+    };
+
+
     // Helper para formatear la fecha
     const formatDate = (timestamp) => {
         if (!timestamp) return "Fecha no disponible";
@@ -78,6 +97,12 @@ function MisPedidosContent() {
                 return (
                     <span className={`${styles.badge} ${styles.badgeDelivered}`}>
                         <CheckCircle2 size={14} /> Entregado
+                    </span>
+                );
+            case "cancelado":
+                return (
+                    <span className={`${styles.badge}`} style={{ backgroundColor: "#fee2e2", color: "#991b1b" }}>
+                        <XCircle size={14} /> Cancelado
                     </span>
                 );
             case "enviado":
@@ -137,6 +162,17 @@ function MisPedidosContent() {
                                         <span className={styles.totalPrice}>{formatPrice(order.total)}</span>
                                     </div>
                                 </div>
+
+                                {(!order.status || order.status === "confirmado") && (
+                                    <div style={{ padding: "0 24px" }}>
+                                        <button 
+                                            onClick={() => handleCancelOrder(order.id)}
+                                            style={{ backgroundColor: "#fee2e2", color: "#ef4444", padding: "6px 12px", borderRadius: "6px", border: "1px solid #fecaca", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", fontSize: "14px", fontWeight: "500", marginTop: "12px", width: "fit-content" }}
+                                        >
+                                            <Ban size={16} /> Cancelar pedido
+                                        </button>
+                                    </div>
+                                )}
 
                                 {/* Botón para expandir/colapsar */}
                                 <button
