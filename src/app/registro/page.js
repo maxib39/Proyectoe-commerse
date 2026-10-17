@@ -90,6 +90,7 @@ export default function RegisterPage() {
                 <div className={styles.divider}>o</div>
 
                 <button onClick={loginWithGoogle} className={styles.googleBtn}>
+                    <img src="/google.svg" alt="Google" width={20} height={20} className={styles.googleIcon} />
                     Registrarme con Google
                 </button>
 

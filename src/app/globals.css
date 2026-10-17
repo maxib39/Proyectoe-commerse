@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
+  /* Le avisa al sistema que la página es de tema claro */
 }
 
 @theme inline {
@@ -12,12 +14,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Regla global: asegura que en cualquier dispositivo los inputs tengan texto oscuro */
+input,
+textarea,
+select {
+  color: #111827 !important;
+  background-color: #ffffff !important;
 }
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+}
+
 
 /* Reseteo global para eliminar márgenes laterales e imprevistos de scroll */
 html,
